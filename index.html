@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulário de Contato Acessível</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <main>
+    <section class="card">
+      <h1>Entre em Contato</h1>
+
+      <div id="toast" class="toast hidden" role="status" aria-live="polite">
+        <p class="toast-title">✓ Mensagem Enviada!</p>
+        <p class="toast-desc">Obrigado por preencher o formulário. Entraremos em contato em breve!</p>
+      </div>
+
+      <form id="contact-form" action="#" method="POST" novalidate>
+        
+        <div class="row">
+          <div class="field">
+            <label for="first-name">Primeiro Nome <span class="asterisk" aria-hidden="true">*</span></label>
+            <input type="text" id="first-name" name="firstName" autocomplete="given-name" required>
+            <span class="error" id="err-first-name" aria-live="polite"></span>
+          </div>
+
+          <div class="field">
+            <label for="last-name">Sobrenome <span class="asterisk" aria-hidden="true">*</span></label>
+            <input type="text" id="last-name" name="lastName" autocomplete="family-name" required>
+            <span class="error" id="err-last-name" aria-live="polite"></span>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="email">Endereço de E-mail <span class="asterisk" aria-hidden="true">*</span></label>
+          <input type="email" id="email" name="email" autocomplete="email" required>
+          <span class="error" id="err-email" aria-live="polite"></span>
+        </div>
+
+        <fieldset class="field">
+          <legend>Tipo de Consulta <span class="asterisk" aria-hidden="true">*</span></legend>
+          <div class="row radio-group">
+            <label class="radio-option" for="query-general">
+              <input type="radio" id="query-general" name="queryType" value="general" required>
+              Suporte Geral
+            </label>
+            <label class="radio-option" for="query-support">
+              <input type="radio" id="query-support" name="queryType" value="support">
+              Solicitação de Suporte
+            </label>
+          </div>
+          <span class="error" id="err-query-type" aria-live="polite"></span>
+        </fieldset>
+
+        <div class="field">
+          <label for="message">Mensagem <span class="asterisk" aria-hidden="true">*</span></label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+          <span class="error" id="err-message" aria-live="polite"></span>
+        </div>
+
+        <div class="field checkbox-field">
+          <label for="consent" class="checkbox-option">
+            <input type="checkbox" id="consent" name="consent" required>
+            <span>Eu autorizo o contato com base nos dados fornecidos <span class="asterisk" aria-hidden="true">*</span></span>
+          </label>
+          <span class="error" id="err-consent" aria-live="polite"></span>
+        </div>
+
+        <button type="submit" id="btn-submit">Enviar</button>
+
+      </form>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,200 @@
+:root {
+  --clr-green-200: #dff1e7;
+  --clr-green-600: #0c7d69;
+  --clr-green-800: #063f35;
+  --clr-red: #d73c3c;
+  --clr-white: #ffffff;
+  --clr-grey-500: #87a3a0;
+  --clr-grey-900: #2b2b2b;
+  --ff-sans: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--ff-sans);
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--clr-grey-900);
+  background-color: var(--clr-green-200);
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 1.5rem;
+}
+
+main {
+  width: 100%;
+  max-width: 46rem;
+}
+
+.card {
+  background-color: var(--clr-white);
+  padding: 2.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.05);
+}
+
+h1 {
+  font-size: 2rem;
+  letter-spacing: -0.05em;
+  margin-bottom: 2rem;
+  color: var(--clr-grey-900);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+@media (min-width: 40em) {
+  .row {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  border: none;
+}
+
+label, legend {
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.asterisk {
+  color: var(--clr-green-600);
+  margin-left: 0.2rem;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--clr-grey-500);
+  border-radius: 0.5rem;
+  font-family: inherit;
+  font-size: 1rem;
+  color: inherit;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+input[type="text"]:hover,
+input[type="email"]:hover,
+textarea:hover,
+.radio-option:hover {
+  border-color: var(--clr-green-600);
+}
+
+input:focus-visible,
+textarea:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--clr-green-600);
+  outline-offset: 2px;
+}
+
+.radio-group {
+  gap: 1rem;
+}
+
+.radio-option {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--clr-grey-500);
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-weight: 400;
+}
+
+.radio-option:has(input:checked) {
+  background-color: var(--clr-green-200);
+  border-color: var(--clr-green-600);
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+  accent-color: var(--clr-green-600);
+  width: 1.125rem;
+  height: 1.125rem;
+  cursor: pointer;
+}
+
+.checkbox-option {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  cursor: pointer;
+  font-weight: 400;
+  font-size: 0.9rem;
+}
+
+.error {
+  color: var(--clr-red);
+  font-size: 0.825rem;
+  margin-top: 0.4rem;
+  min-height: 1em;
+}
+
+input.is-invalid,
+textarea.is-invalid {
+  border-color: var(--clr-red);
+}
+
+button[type="submit"] {
+  background-color: var(--clr-green-600);
+  color: var(--clr-white);
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  margin-top: 0.5rem;
+}
+
+button[type="submit"]:hover {
+  background-color: var(--clr-green-800);
+}
+
+.toast {
+  background-color: var(--clr-grey-900);
+  color: var(--clr-white);
+  padding: 1.25rem 1.5rem;
+  border-radius: 0.75rem;
+  margin-bottom: 1.5rem;
+  border-left: 4px solid var(--clr-green-600);
+}
+
+.toast-title {
+  font-weight: 700;
+  font-size: 0.95rem;
+  margin-bottom: 0.25rem;
+}
+
+.toast-desc {
+  font-size: 0.85rem;
+  color: var(--clr-green-200);
+}
+
+.hidden {
+  display: none;
+}
